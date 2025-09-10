@@ -1,0 +1,245 @@
+:root {
+  /* Default Light Mode Variables */
+  --bg: #f0f2f5;
+  --panel: #ffffff;
+  --soft: #f8f9fa;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #58a6ff;
+  --border: #d1d5db;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+  --bg: #0b0f14;
+  --panel: #10161d;
+  --soft: #0f141a;
+  --text: #e7edf3;
+  --muted: #a7b1bb;
+  --accent: #58a6ff;
+  --border: #1c2633;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.navbar {
+  border-bottom: 1px solid var(--border);
+  background: rgba(16, 22, 29, 0.7);
+  backdrop-filter: saturate(1.2) blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.navbar .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 700;
+}
+
+.logo {
+  font-size: 22px;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav .button {
+  background: var(--accent);
+  color: #031425;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.user-info {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--soft);
+  margin-right: 6px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  margin: 12px 0;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.btn,
+.button,
+.card .btn {
+  background: var(--accent);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: #031425;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+  transition: background 0.3s, color 0.3s;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--soft);
+  color: var(--text);
+  margin: 6px 0;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+label {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  transition: border-color 0.3s;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.tile {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.tile img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.tile .p {
+  padding: 10px;
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
+  transition: border-color 0.3s;
+}
+
+.alert {
+  background: #28171a;
+  border: 1px solid #54232a;
+  color: #ffb4c1;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+/* Dark/Light toggle button */
+#theme-toggle {
+  background: var(--accent);
+  color: #031425;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode #theme-toggle {
+  background: #444;
+  color: #f0f0f0;
+}
+
+#theme-toggle:hover {
+  opacity: 0.85;
+}
+
+
+/* Small corner Dark/Light mode toggle button */
+#theme-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 1000; /* stays above other elements */
+  background: var(--accent);
+  color: #031425;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: background 0.3s, color 0.3s, opacity 0.3s;
+}
+
+#theme-toggle:hover {
+  opacity: 1;
+}
+
+body.dark-mode #theme-toggle {
+  background: #444;
+  color: #f0f0f0;
+}
