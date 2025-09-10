@@ -1,15 +1,37 @@
-# BCC Community (Bird Catalog + Forum)
+Bird Catalog and Community Website
+Project Overview
 
-A minimal PHP + MySQL app featuring:
-- User auth (register, login, logout)
-- Birds catalog (image, scientific name, description)
-- Forums (boards, posts with optional image + location, likes, comments)
-- Home page with recent image tiles + headlines
+The Bird Catalog and Community project is a web-based platform for bird enthusiasts. Users can add, view, and search birds, while also participating in a community forum where they can create posts, comment, like, and attach birds to posts. The platform supports role-based access control, allowing Admins and Moderators to manage bird submissions and forum content.
 
-## 1) Import database
-- Open phpMyAdmin (or MySQL CLI) and run the SQL file:
-  - `database/bcc_schema.sql`
+Features
+User Features
 
-## 2) Configure web root
-- Place this `bcc/` folder under your server root (e.g., `C:\xampp\htdocs\` on Windows).
-- If you use a different folder name, edit `config.php` -> `url()` base.
+Add, view, and search for birds.
+
+Create new forum posts with optional bird attachment.
+
+Comment and like posts.
+
+Upload images with posts.
+
+View personal bird submissions and their status.
+
+Admin/Moderator Features
+
+Approve or reject bird submissions.
+
+Delete forum posts.
+
+Manage user roles and permissions.
+
+Monitor pending content submissions.
+
+Technologies Used
+
+Backend: PHP, MySQL
+
+Frontend: HTML, CSS, JavaScript
+
+Hosting: InfinityFree or similar
+
+Additional Libraries: None (vanilla JS and PHP)
